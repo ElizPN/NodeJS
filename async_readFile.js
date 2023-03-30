@@ -1,7 +1,6 @@
 import fs from "fs";
 
-
-fs.readFile("num9999.txt", "utf-8", (err, data) => {
+fs.readFile("num3.txt", "utf-8", (err, data) => {
   let num = parseInt(data);
   let square = num * num;
 
