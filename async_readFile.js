@@ -1,12 +1,15 @@
 import fs from "fs";
 
-fs.readFile("num3.txt", "utf-8", (err, data) => {
+
+fs.readFile("num9999.txt", "utf-8", (err, data) => {
   let num = parseInt(data);
   let square = num * num;
-  console.log(err);// will be throw Error if readeble file does not exist.
 
-  console.log(square);
+  if (!err) {
+    console.log(square);
+  } else {
+    console.log("ohh it`s error", err); // if file does not exist we get this message
+  }
 });
-
 
 console.log("!!!");
