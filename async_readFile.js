@@ -7,3 +7,6 @@ fs.readFile("num3.txt", "utf-8", (err, data) => {
 
   console.log(square);
 });
+
+
+console.log("!!!");
