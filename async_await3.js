@@ -6,14 +6,11 @@ async function func() {
     const fileNames = ["num5.txt", "num6.txt", "num7.txt"];
     for (const fileName of fileNames) {
       let num = Math.floor(Math.random() * 100);
-
       num = num.toString();
       await fs.promises.writeFile(fileName, num);
 
       let data = await fs.promises.readFile(fileName, "utf8");
       data = parseInt(data);
-      console.log(typeof data);
-      console.log(typeof sum);
       sum += data;
     }
     sum = sum.toString();
