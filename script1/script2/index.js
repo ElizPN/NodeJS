@@ -9,5 +9,4 @@ async function readTextFile() {
   }
 }
 readTextFile();
-///Users/gast/Documents/Repositories/NodeJS/script1/script2/index.js
-///Users/gast/Documents/Repositories/NodeJS/dir/readme.txt
+
