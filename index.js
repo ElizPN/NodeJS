@@ -1,3 +1,7 @@
-import __dirname from "./__dirname.js";
+import http from "http";
 
-console.log(__dirname);
+http.createServer((request, response) => {
+  response.write("some_text1");
+  response.write("some_text2");
+  response.end();
+}).listen(3000)
