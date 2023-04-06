@@ -5,8 +5,8 @@ http
     response.setHeader("Content-Type", "text/html");
     response.setHeader("Cache-Control", "no-cache");
     response.statusCode = 200;
-    response.write("<b>hello world</b>");
-
-    response.end();
+    const date = new Date();
+    const formattedData = date.toLocaleString();
+    response.write(`<p>${formattedData}</p>`);
   })
   .listen(3000);
