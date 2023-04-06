@@ -1,4 +1,5 @@
 import http from "http";
+let i = 20;
 
 http
   .createServer((request, response) => {
@@ -10,5 +11,10 @@ http
     const date = new Date();
     const formattedData = date.toLocaleString();
     response.write(`<p>${formattedData}</p>`);
+    response.write(String(--i));
+    if (i === 0) {
+      response.write("counter is 0");
+    }
+    response.end();
   })
   .listen(3000);
