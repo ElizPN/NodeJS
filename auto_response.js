@@ -16,11 +16,13 @@ http
     if (request.url === "/img.png") {
       data = await fs.promises.readFile("img.png");
       type = "image/png";
+      status = 200;
     }
 
     if (request.url === "/styles.css") {
       data = await fs.promises.readFile("styles.css");
       type = "text/css";
+      status = 200;
     }
 
     response.writeHead(status, { "Content-Type": type });
