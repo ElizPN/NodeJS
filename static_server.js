@@ -8,13 +8,19 @@ http
     let status;
     console.log(request.url);
 
-    if ((await fs.promises.stat(path)).isDirectory()) {
-      path += "/index.html";
+    try {
+      if ((await fs.promises.stat(path)).isDirectory()) {
+        path += "/index.html";
+      }
+
+      text = await fs.promises.readFile(path, "utf8");
+      status = 200;
+    } catch (err) {
+      status = 404;
+      text = "page not found";
     }
 
-    text = await fs.promises.readFile(path, "utf8");
-
-    response.writeHead(200, { "Content-Type": "text/html" });
+    response.writeHead(status, { "Content-Type": "text/html" });
     response.write(text);
     response.end();
   })
