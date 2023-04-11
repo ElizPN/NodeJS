@@ -17,7 +17,7 @@ http
       status = 200;
     } catch (err) {
       status = 404;
-      text = "page not found";
+      text = await fs.promises.readFile("root/404.html", "utf8");
     }
 
     response.writeHead(status, { "Content-Type": "text/html" });
